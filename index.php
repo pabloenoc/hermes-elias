@@ -20,9 +20,13 @@ $rss = Feed::loadRss($url);
 <body>
     <h1><?=  htmlspecialchars($rss->title) ?>></h1>
     <?php foreach($rss->item as $item): ?>
-        <ul>
-            <li><?= htmlspecialchars($item->item) ?></li>
-        </ul>
+        
+            <div>
+                <a href="<?= $item->link ?>" target="_blank">
+                    <?= htmlspecialchars($item->item) ?>
+                </a>
+            </div>
+
     <?php endforeach ?>
 </body>
 </html>
