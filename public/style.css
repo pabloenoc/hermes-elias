@@ -7,7 +7,77 @@ html, body {
     padding: 0;
     font-family: system-ui, Helvetica, sans-serif;
 }
+* {
+	box-sizing: border-box;
+}
 
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: system-ui, Helvetica, Arial, Verdana, sans-serif;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	background-color: #000;
+	color: #ddd;
+	padding: 1rem;
+}
+
+navbar {
+    /*background-image: url(images/motifs-greek.jpg);*/
+    background-position: center;
+    background-repeat: repeat-x;
+}
+
+navbar a {
+	text-decoration: none;
+	color: inherit;
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+navbar img {
+	height: 32px;
+	width: 32px;
+}
+
+navbar h1 {
+	margin: 0;
+	font-size: 1.15rem;
+}
+
+main {
+	padding: 1rem;
+}
+
+.linkfeed__title {
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+.linkpost {
+	display: flex;
+	flex-direction: column;
+	border-bottom: 1px solid #3b3b3b;
+	margin-block: 1rem;
+	padding-bottom: 1rem;
+}
+
+.linkpost a {
+	padding-top: 0.5rem;
+	color: #e8ae71;
+	text-decoration: none;
+}
+
+.linkpost__date {
+	font-size: 0.7rem;
+	color: gray;
+	margin: 0;
+}
 body {
     display: flex;
     flex-direction: column;

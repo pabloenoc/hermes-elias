@@ -6,7 +6,6 @@ $url = "https://www.teamcherry.com.au/blog?format=rss";
 
 $rss = Feed::loadRss($url);
 
-
 ?>
 
 <!DOCTYPE html>
@@ -19,25 +18,28 @@ $rss = Feed::loadRss($url);
 </head>
 <body>
     <navbar>
-        <a href="/">
+        <a href='/'>
             <img src='images/logo.webp'>
             <h1>Home</h1>
         </a>
     </navbar>
+    <main>
+        <h1 class="linkfeed__title"><?= htmlspecialchars($rss->title) ?></h1>
 
-    <h1><?=  htmlspecialchars($rss->title) ?>></h1>
-
-    <?php foreach($rss->item as $item): ?>
+        <?php foreach($rss->item as $item): ?>
 
             <div class="linkpost">
                 <p class="linkpost__date">
                     <?= htmlspecialchars($item->pubDate) ?>
                 </p>
-                <a href="<?= $item->link ?>" target="__blank">
-                    <?= htmlspecialchars($item->item) ?>
+                <a href="<?= $item->link ?>" target="_blank">
+                    <?= htmlspecialchars($item->title) ?>
                 </a>
             </div>
 
-    <?php endforeach ?>
+        <?php endforeach ?>
+    </main>
+
 </body>
 </html>
+
