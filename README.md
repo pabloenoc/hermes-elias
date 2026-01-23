@@ -4,6 +4,11 @@ Hermes is an app that lets the user curate their news sources and build their ow
 
 ## Changelog
 
+### 2026-01-22
+- Created navbar
+- Style fixes
+- Created public/ dir
+
 ### 2026-01-15
 - Learn about PHP as a templating language
 
