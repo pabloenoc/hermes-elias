@@ -127,6 +127,11 @@ navbar h1 {
     text-decoration: none;
 }
 
+.linkpost a:hover {
+    color: #dddd;
+}
+
+
 .linkpost__date {
     font-size: 0.7rem;
     color: grey;
