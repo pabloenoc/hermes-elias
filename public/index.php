@@ -18,6 +18,13 @@ $rss = Feed::loadRss($url);
     <title>Hermes - Elias</title>
 </head>
 <body>
+    <navbar>
+        <a href="/">
+            <img src='images/logo.webp'>
+            <h1>Home</h1>
+        </a>
+    </navbar>
+
     <h1><?=  htmlspecialchars($rss->title) ?>></h1>
 
     <?php foreach($rss->item as $item): ?>

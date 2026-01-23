@@ -16,6 +16,29 @@ body {
     padding: 1rem;
 }
 
+navbar {
+    background-position: none;
+    background-repeat: repeat-x;
+}
+
+navbar a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+navbar img {
+    height: 32px;
+    width: 32px;
+}
+
+navbar h1 {
+    margin: 0;
+    font-size: 1.15rem;
+}
+
 .linkfeed__title {
     font-size: 1rem;
     text-transform: uppercase;
