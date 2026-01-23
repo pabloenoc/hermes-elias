@@ -89,6 +89,7 @@ body {
 navbar {
     background-position: none;
     background-repeat: repeat-x;
+    padding: 1rem;
 }
 
 navbar a {
