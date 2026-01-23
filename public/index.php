@@ -19,10 +19,14 @@ $rss = Feed::loadRss($url);
 </head>
 <body>
     <h1><?=  htmlspecialchars($rss->title) ?>></h1>
+
     <?php foreach($rss->item as $item): ?>
-        
-            <div>
-                <a href="<?= $item->link ?>" target="_blank">
+
+            <div class="linkpost">
+                <p class="linkpost__date">
+                    <?= htmlspecialchars($item->pubDate) ?>
+                </p>
+                <a href="<?= $item->link ?>" target="__blank">
                     <?= htmlspecialchars($item->item) ?>
                 </a>
             </div>
