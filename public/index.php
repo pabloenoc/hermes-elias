@@ -24,6 +24,9 @@ $rss = Feed::loadRss($url);
         </a>
     </navbar>
     <main>
+        <div>
+            <?php require __DIR__ . './new_feed.php'?>
+        </div>
         <h1 class="linkfeed__title"><?= htmlspecialchars($rss->title) ?></h1>
 
         <?php foreach($rss->item as $item): ?>
