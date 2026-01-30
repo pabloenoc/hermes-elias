@@ -4,6 +4,11 @@ Hermes is an app that lets the user curate their news sources and build their ow
 
 ## Changelog
 
+## 2026-01-27
+- Created the Hermes database
+- Created a `feeds` table
+- Download DB Browser for SQLite
+
 ### 2026-01-22
 - Created navbar
 - Style fixes
