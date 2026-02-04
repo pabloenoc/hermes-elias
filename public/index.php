@@ -2,10 +2,6 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-// $url = "https://www.teamcherry.com.au/blog?format=rss";
-
-// $rss = Feed::loadRss($url);
-
 $db = new SQLite3(__DIR__ . '/../db/hermes_development.sqlite');
 
 $results = $db->query('SELECT * from feeds');
