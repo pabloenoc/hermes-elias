@@ -2,9 +2,19 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$url = "https://www.teamcherry.com.au/blog?format=rss";
+// $url = "https://www.teamcherry.com.au/blog?format=rss";
 
-$rss = Feed::loadRss($url);
+// $rss = Feed::loadRss($url);
+
+$db = new SQLite3(__DIR__ . '/../db/hermes_development.sqlite');
+
+$results = $db->query('SELECT * from feeds');
+$feeds = [];
+while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
+    $feeds[] = $row;
+}
+
+print_r($feeds);
 
 ?>
 
@@ -25,10 +35,28 @@ $rss = Feed::loadRss($url);
     </navbar>
     <main>
         <div>
-            <?php require __DIR__ . './new_feed.php'?>
+            <?php require __DIR__ . '/new_feed.php'?>
         </div>
-        <h1 class="linkfeed__title"><?= htmlspecialchars($rss->title) ?></h1>
 
+        <?php foreach($feeds as $feed): ?>
+            <h1 class="linkfeed__title"><?= htmlspecialchars($feed['title']) ?></h1>
+
+            <?php if ($feed['format'] === 'rss'): ?>
+                <?php $rss = Feed::load($feed['url']) ?>
+                <?php foreach($rss->item as $item): ?>
+                    <div class="linkpost">
+                        <p class="linkpost_date">
+                            <?= htmlspecialchars($item->pubDate) ?>
+                        </p>
+                        <a href="<?= $item->link ?>" target="_blank">
+                            <?= htmlspecialchars($item->title) ?>
+                        </a>
+                    </div>
+                <?php endforeach ?>
+            <?php endif ?>
+        <?php endforeach ?>
+
+        
         <?php foreach($rss->item as $item): ?>
 
             <div class="linkpost">
