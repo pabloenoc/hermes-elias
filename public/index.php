@@ -29,40 +29,31 @@ while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
     </navbar>
     <main>
         <div>
-            <?php require __DIR__ . '/new_feed.php'?>
+            <?php require __DIR__ . '/new_feed.php' ?>
         </div>
 
-        <?php foreach($feeds as $feed): ?>
-            <h1 class="linkfeed__title"><?= htmlspecialchars($feed['title']) ?></h1>
+        <div class="two-columns">
+            <?php foreach($feeds as $feed): ?>
+                <div class="feed">
+                    <h1 class="linkfeed__title"><?= htmlspecialchars($feed['title']) ?></h1>
 
-            <?php if ($feed['format'] === 'rss'): ?>
-                <?php $rss = Feed::load($feed['url']) ?>
-                <?php foreach($rss->item as $item): ?>
-                    <div class="linkpost">
-                        <p class="linkpost_date">
-                            <?= htmlspecialchars($item->pubDate) ?>
-                        </p>
-                        <a href="<?= $item->link ?>" target="_blank">
-                            <?= htmlspecialchars($item->title) ?>
-                        </a>
-                    </div>
-                <?php endforeach ?>
-            <?php endif ?>
-        <?php endforeach ?>
+                <?php if ($feed['format'] === 'rss'): ?>
+                    <?php $rss = Feed::load($feed['url']) ?>
+                    <?php foreach($rss->item as $item): ?>
+                        <div class="linkpost">
+                            <p class="linkpost__date">
+                                <?= htmlspecialchars($item->pubDate) ?>
+                            </p>
+                            <a href="<?= $item->link ?>" target="_blank">
+                                <?= htmlspecialchars($item->title) ?>
+                            </a>
+                        </div>
+                    <?php endforeach ?>
+                <?php endif ?>
+                </div>
+            <?php endforeach ?>
+        </div>
 
-        
-        <?php foreach($rss->item as $item): ?>
-
-            <div class="linkpost">
-                <p class="linkpost__date">
-                    <?= htmlspecialchars($item->pubDate) ?>
-                </p>
-                <a href="<?= $item->link ?>" target="_blank">
-                    <?= htmlspecialchars($item->title) ?>
-                </a>
-            </div>
-
-        <?php endforeach ?>
     </main>
 
 </body>

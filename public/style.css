@@ -1,13 +1,4 @@
 * {
-    box-sizing: border-box;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: system-ui, Helvetica, sans-serif;
-}
-* {
 	box-sizing: border-box;
 }
 
@@ -22,13 +13,13 @@ body {
 	flex-direction: column;
 	background-color: #000;
 	color: #ddd;
-	padding: 1rem;
 }
 
 navbar {
     /*background-image: url(images/motifs-greek.jpg);*/
     background-position: center;
     background-repeat: repeat-x;
+    padding: 1rem;
 }
 
 navbar a {
@@ -54,19 +45,19 @@ main {
 }
 
 input[type="url"] {
-    border: 1px solid white;
-    background-color: transparent;
-    padding: 1rem;
-    font-size: 1rem;
-    color: white;
+	border: 1px solid white;
+	background-color: transparent;
+	padding: 1rem;
+	font-size: 1rem;
+	color: white;
 }
 
 input[type="submit"] {
-    background-color: #e8ae71;
-    border: none;
-    outline: none;
-    padding: 1rem;
-    font-size: 1rem;
+	background-color: #e8ae71;
+	border: none;
+	outline: none;
+	padding: 1rem;
+	font-size: 1rem;
 }
 
 .linkfeed__title {
@@ -89,73 +80,23 @@ input[type="submit"] {
 	text-decoration: none;
 }
 
+.linkpost a:hover {
+	color: #ddd;
+}
+
 .linkpost__date {
 	font-size: 0.7rem;
 	color: gray;
 	margin: 0;
 }
-body {
-    display: flex;
-    flex-direction: column;
-    background-color: #2d1942;
-    color: #ddd;
-    padding: 1rem;
+
+
+.feed {
+	break-inside: avoid;
 }
 
-navbar {
-    background-position: none;
-    background-repeat: repeat-x;
-    padding: 1rem;
-}
-
-navbar a {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-navbar img {
-    height: 32px;
-    width: 32px;
-}
-
-navbar h1 {
-    margin: 0;
-    font-size: 1.15rem;
-}
-
-.linkfeed__title {
-    font-size: 1rem;
-    text-transform: uppercase;
-}
-
-.linkpost {
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid #3d3d3d;
-    padding: 1rem;
-}
-
-.linkpost a {
-    padding-top: 0.5rem;
-    color: skyblue;
-    text-decoration: none;
-}
-
-.linkpost a:hover {
-    color: #dddd;
-}
-
-
-.linkpost__date {
-    font-size: 0.7rem;
-    color: grey;
-    margin: 0;
-}
-
-.details summary {
-    color: skyblue;
-    text-decoration: none;
+@media screen and (min-width: 840px) {
+	.two-columns {
+		columns: 2;
+	}
 }
