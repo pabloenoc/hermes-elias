@@ -10,8 +10,6 @@ while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
     $feeds[] = $row;
 }
 
-print_r($feeds);
-
 ?>
 
 <!DOCTYPE html>
