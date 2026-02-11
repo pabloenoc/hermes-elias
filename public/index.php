@@ -32,26 +32,8 @@ while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
             <?php require __DIR__ . '/new_feed.php' ?>
         </div>
 
-        <div class="two-columns">
-            <?php foreach($feeds as $feed): ?>
-                <div class="feed">
-                    <h1 class="linkfeed__title"><?= htmlspecialchars($feed['title']) ?></h1>
-
-                <?php if ($feed['format'] === 'rss'): ?>
-                    <?php $rss = Feed::load($feed['url']) ?>
-                    <?php foreach($rss->item as $item): ?>
-                        <div class="linkpost">
-                            <p class="linkpost__date">
-                                <?= htmlspecialchars($item->pubDate) ?>
-                            </p>
-                            <a href="<?= $item->link ?>" target="_blank">
-                                <?= htmlspecialchars($item->title) ?>
-                            </a>
-                        </div>
-                    <?php endforeach ?>
-                <?php endif ?>
-                </div>
-            <?php endforeach ?>
+        <div class="two-columns" style="break-inside: avoid";>
+            <p>TODO: Show feeds in posts</p>
         </div>
 
     </main>
