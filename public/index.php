@@ -10,6 +10,20 @@ while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
     $feeds[] = $row;
 }
 
+foreach($feeds as $feed) {
+    try {
+        $xml = Feed::load($feed['url']);
+    }
+    catch(FeedException $e) {
+        echo "<pre>";
+        echo $feed['url'];
+        echo "\n";
+        echo $e->getMessage();
+        die;
+    }
+}
+
+
 ?>
 
 <!DOCTYPE html>
