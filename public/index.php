@@ -17,11 +17,7 @@ foreach($feeds as $feed) {
         $xml = Feed::load($feed['url']);
     }
     catch(FeedException $e) {
-        echo "<pre>";
-        echo $feed['url'];
-        echo "\n";
-        echo $e->getMessage();
-        die;
+        $errors[] = $e->getMessage() . " - " . $feed['url'];
     }
 }
 
@@ -48,7 +44,7 @@ foreach($feeds as $feed) {
             <?php require __DIR__ . '/new_feed.php' ?>
         </div>
 
-        <div class="page-erros">
+        <div class="page-errors">
             <?php if (count($errors) > 0): ?>
                 <ul>
                     <?php foreach($errors as $error): ?>
