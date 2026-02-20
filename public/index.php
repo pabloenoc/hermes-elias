@@ -12,15 +12,15 @@ while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
 
 $errors = [];
 
-foreach($feeds as $feed) {
-    try {
-        $xml = Feed::load($feed['url']);
-    }
-    catch(FeedException | Exception $e) {
-        $errors[] = get_class($e) . ":" . $e->getMessage() . " - " . $feed['url'];
-    }
+foreach($feeds as $index => $feed) {
+	try {
+		$xml = Feed::load($feed['url']);
+        $feeds[$index]['xml'] = $xml;
+	}
+	catch(FeedException | Exception $e) {
+        $errors[] = get_class($e) . ": " . $e->getMessage() . " - " . $feed['url'];
+	}
 }
-
 
 ?>
 
@@ -50,16 +50,18 @@ foreach($feeds as $feed) {
             <?php if (count($errors) > 0): ?>
                 <ul>
                     <?php foreach($errors as $error): ?>
-                    <li><?= $error ?>></li>
+                    <li><?= $error ?></li>
                     <?php endforeach; ?>
                 </ul>
             <?php endif; ?>
+            
         </div>
 
-        <div class="two-columns" style="break-inside: avoid";>
-            <p>TODO: Show feeds in posts</p>
+        <div class="two-columns">
+        	<?php foreach ($feeds as $feed): ?>
+                <p><?= $feed['title'] ?></p>
+            <?php  endforeach; ?>
         </div>
-
     </main>
 
 </body>
