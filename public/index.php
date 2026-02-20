@@ -16,8 +16,8 @@ foreach($feeds as $feed) {
     try {
         $xml = Feed::load($feed['url']);
     }
-    catch(FeedException $e) {
-        $errors[] = $e->getMessage() . " - " . $feed['url'];
+    catch(FeedException | FeedException $e) {
+        $errors[] = get_class($e) . ":" . $e->getMessage() . " - " . $feed['url'];
     }
 }
 
