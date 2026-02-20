@@ -10,6 +10,8 @@ while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
     $feeds[] = $row;
 }
 
+$errors = [];
+
 foreach($feeds as $feed) {
     try {
         $xml = Feed::load($feed['url']);
@@ -44,6 +46,16 @@ foreach($feeds as $feed) {
     <main>
         <div>
             <?php require __DIR__ . '/new_feed.php' ?>
+        </div>
+
+        <div class="page-erros">
+            <?php if (count($errors) > 0): ?>
+                <ul>
+                    <?php foreach($errors as $error): ?>
+                    <li><?= $error ?>></li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
         </div>
 
         <div class="two-columns" style="break-inside: avoid";>
