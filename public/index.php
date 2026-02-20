@@ -45,6 +45,8 @@ foreach($feeds as $feed) {
         </div>
 
         <div class="page-errors">
+            <h2>Error(s)</h2>
+
             <?php if (count($errors) > 0): ?>
                 <ul>
                     <?php foreach($errors as $error): ?>
