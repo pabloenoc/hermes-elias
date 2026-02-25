@@ -57,9 +57,22 @@ foreach($feeds as $index => $feed) {
             
         </div>
 
-        <div class="two-columns">
-        	<?php foreach ($feeds as $feed): ?>
+        <div>
+        	<?php foreach ($feeds as $index => $feed): ?>
                 <p><?= $feed['title'] ?></p>
+                <ul>                	
+                	<?php if (isset($feed['xml'])): ?>
+                		<?php foreach ($feed['xml']->item as $item): ?>
+                			<li>
+                				<a href="<?= $item->link ?>" target="_blank">
+                				<?= $item->title ?>
+                				</a>
+                			</li>
+                		<?php endforeach; ?>
+                	<?php else: ?>
+                		<li>No items found.</li>	
+                	<?php endif; ?>
+                </ul>
             <?php  endforeach; ?>
         </div>
     </main>
