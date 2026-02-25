@@ -102,14 +102,3 @@ input[type="submit"] {
 	color: gray;
 	margin: 0;
 }
-
-
-.feed {
-	break-inside: avoid;
-}
-
-@media screen and (min-width: 840px) {
-	.two-columns {
-		columns: 2;
-	}
-}
