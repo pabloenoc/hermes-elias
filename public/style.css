@@ -1,19 +1,28 @@
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html, body {
-	margin: 0;
-	padding: 0;
-	font-family: system-ui, Helvetica, Arial, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, Helvetica, Arial, Verdana, sans-serif;
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	background-color: #000;
-	color: #ddd;
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    color: #ddd;
 }
+
+/* a { */
+/*     color: #4697f4; */
+/*     text-decoration: none; */
+/* } */
+
+/* a:hover { */
+/*     color: #90c5ed; */
+/* } */
 
 navbar {
     /*background-image: url(images/motifs-greek.jpg);*/
@@ -23,82 +32,85 @@ navbar {
 }
 
 navbar a {
-	text-decoration: none;
-	color: inherit;
-	display: flex;
-	gap: 1rem;
-	align-items: center;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
 
 navbar img {
-	height: 32px;
-	width: 32px;
+    height: 32px;
+    width: 32px;
 }
 
 navbar h1 {
-	margin: 0;
-	font-size: 1.15rem;
+    margin: 0;
+    font-size: 1.15rem;
 }
 
 main {
-	padding: 1rem;
+    padding: 1rem;
 }
 
 input[type="url"] {
-	border: 1px solid white;
-	background-color: transparent;
-	padding: 1rem;
-	font-size: 1rem;
-	color: white;
+    border: 1px solid white;
+    background-color: transparent;
+    padding: 1rem;
+    font-size: 1rem;
+    color: white;
 }
 
 input[type="submit"] {
-	background-color: #e8ae71;
-	border: none;
-	outline: none;
-	padding: 1rem;
-	font-size: 1rem;
+    background-color: #e8ae71;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    font-size: 1rem;
 }
 
 .page-errors {
-	border: 2px solid #a10c0c;
-	border-radius: 8px;
-	background-color: #550f0f;
-	font-family: monospace;
-	margin-block: 2rem;
-	padding: 1rem;
+    border: 2px solid #a10c0c;
+    border-radius: 8px;
+    background-color: #550f0f;
+    font-family: monospace;
+    margin-block: 2rem;
+    padding: 1rem;
 }
 
 .page-errors h2 {
-	margin: 0;
+    margin: 0;
 }
 
 .linkfeed__title {
-	font-size: 1.5rem;
-	text-transform: uppercase;
-	font-weight: normal;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: normal;
 }
 
 .linkpost {
-	display: flex;
-	flex-direction: column;
-	border-bottom: 1px solid #3b3b3b;
-	margin-block: 1rem;
-	padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #3b3b3b;
+    margin-block: 1rem;
+    padding-bottom: 1rem;
 }
 
 .linkpost a {
-	padding-top: 0.5rem;
-	color: #e8ae71;
-	text-decoration: none;
+    padding-top: 0.5rem;
+    color: #e8ae71;
+    text-decoration: none;
 }
 
 .linkpost a:hover {
-	color: #ddd;
+    color: #ddd;
 }
 
 .linkpost__date {
-	font-size: 0.7rem;
-	color: gray;
-	margin: 0;
+    font-size: 0.7rem;
+    color: gray;
+    margin: 0;
 }
+
+
+	
