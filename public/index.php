@@ -44,17 +44,16 @@ foreach($feeds as $index => $feed) {
 		<?php require __DIR__ . '/new_feed.php' ?>
             </div>
 
-            <div class="page-errors">
-		<h2>Error(s)</h2>
-
-		<?php if (count($errors) > 0): ?>
+	    <?php if (count($errors) > 0): ?>
+		<div class="page-errors">
+		   <h2>Error(s)</h2>
                     <ul>
 			<?php foreach($errors as $error): ?>
 			    <li><?= $error ?></li>
 			<?php endforeach; ?>
-                    </ul>
-		<?php endif; ?>            
-            </div>
+                    </ul>		    
+		</div>
+	    <?php endif; ?> 
 
             <div>
         	<?php foreach ($feeds as $index => $feed): ?>
