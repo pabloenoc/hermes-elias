@@ -4,6 +4,11 @@ Hermes is an app that lets the user curate their news sources and build their ow
 
 ## Changelog
 
+### 2026-02-26
+- Added linkpost styles
+- Styled input bar
+- Fix errors display to appear when needed only
+
 ### 2026-02-24
 - Remove two columns layout
 - Display feed links
