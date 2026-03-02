@@ -2,6 +2,38 @@
 
 Hermes is an app that lets the user curate their news sources and build their own media consumption algorithm. 
 
+## Installation
+
+Install dependencies with [composer](https://getcomposer.org).
+
+```bash
+$ composer update
+```
+
+### Create Database
+
+We are using SQLite3 for the database. Here is what the development database setup looks like.
+
+```bash
+$ sqlite3 hermes_development.sqlite 
+```
+
+```bash
+sqlite> .schema
+```
+
+```sql
+CREATE TABLE IF NOT EXISTS "feeds" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"title"	TEXT NOT NULL,
+	"url"	TEXT NOT NULL UNIQUE,
+	"format"	TEXT NOT NULL DEFAULT 'atom',
+	"last_fetched_at"	INTEGER,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+```
+
+
 ## Changelog
 
 ### 2026-02-26
