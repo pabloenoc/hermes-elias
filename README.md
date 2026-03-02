@@ -20,6 +20,10 @@ $ sqlite3 db/hermes_development.sqlite < db/schema.sql
 
 ## Changelog
 
+### 2026-03-01
+- Updated README with installation instructions
+- Created db schema file
+
 ### 2026-02-26
 - Added linkpost styles
 - Styled input bar
