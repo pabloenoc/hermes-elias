@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS "feeds" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"title"	TEXT NOT NULL,
+	"url"	TEXT NOT NULL UNIQUE,
+	"format"	TEXT NOT NULL DEFAULT 'atom',
+	"last_fetched_at"	INTEGER,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
