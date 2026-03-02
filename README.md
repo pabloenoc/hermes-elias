@@ -15,7 +15,7 @@ $ composer update
 We are using SQLite3 for the database. Here is what the development database setup looks like.
 
 ```bash
-$ sqlite3 hermes_development.sqlite 
+$ sqlite3 hermes_development.sqlite < db/schema.sql
 ```
 
 ```bash
