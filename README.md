@@ -12,27 +12,11 @@ $ composer update
 
 ### Create Database
 
-We are using SQLite3 for the database. Here is what the development database setup looks like.
+We are using SQLite3 for the database. To create the development database run the following command:
 
 ```bash
-$ sqlite3 hermes_development.sqlite < db/schema.sql
+$ sqlite3 db/hermes_development.sqlite < db/schema.sql
 ```
-
-```bash
-sqlite> .schema
-```
-
-```sql
-CREATE TABLE IF NOT EXISTS "feeds" (
-	"id"	INTEGER NOT NULL UNIQUE,
-	"title"	TEXT NOT NULL,
-	"url"	TEXT NOT NULL UNIQUE,
-	"format"	TEXT NOT NULL DEFAULT 'atom',
-	"last_fetched_at"	INTEGER,
-	PRIMARY KEY("id" AUTOINCREMENT)
-);
-```
-
 
 ## Changelog
 
